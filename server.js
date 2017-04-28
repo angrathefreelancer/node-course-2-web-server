@@ -34,6 +34,12 @@ hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
 });
 
+app.get ('/projects',(request,response) => {
+  response.render ('projects.hbs', {
+    pageTitle: 'Projects Page'
+  })
+})
+
 app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home Page',
@@ -55,5 +61,5 @@ app.get('/bad', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('Server is up on port 3000');
+  console.log(`Server is up on port ${port}`);
 });
